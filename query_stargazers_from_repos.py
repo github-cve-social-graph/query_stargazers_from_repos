@@ -54,11 +54,11 @@ def query_stargazers_from_repos(data, mytoken):
     }}
     }}
     """
-    numberOfRepos = len(data)
+    count_repo = 0
 
     for repo_link in data:
 
-        owner, repo = getOwnerRepo(repo_link)
+        owner, repo = get_owner_repo(repo_link)
 
         # RUN THE QUERY
         #star_list = []
@@ -115,6 +115,11 @@ def query_stargazers_from_repos(data, mytoken):
                 count = count + 100
                 print(str(count) + " users processed.")
 
+
+        print("")        
         print("Repo: " + repo + " done.")
+        print("")
+        count_repo += 1
+        print(str(count_repo) + " repos processed.")
         print("")
         print("")
