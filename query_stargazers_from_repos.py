@@ -18,9 +18,9 @@ from run_query import run_query
 #          "hireable", "num_followers", "num_following", "created_at", "star_time"]
 
 
+# This function acceps a data frame with columns owner and repo.
 
-
-def query_stargazers_from_repos(data, mytoken):
+def query_stargazers_from_repos(data_frame, mytoken):
 
     ## Change to your GITHUB PERSONAL ACCESS TOKEN
 
@@ -54,12 +54,15 @@ def query_stargazers_from_repos(data, mytoken):
     }}
     }}
     """
+
+
     count_repo = 0
 
-    for repo_link in data:
-
-        owner, repo = get_owner_repo(repo_link)
-
+    for index in range(len(data_frame)):
+        
+        owner = data_frame.loc[index, "Owner"] 
+        repo = data_frame.loc[index, "Repo"]
+        
         # RUN THE QUERY
         #star_list = []
         endCursor = ""  # Start from begining
