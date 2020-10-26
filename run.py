@@ -9,6 +9,7 @@ data = load_links("repos.csv")
 
 ## There are 6000 links. So we do the first 500 first.
 
+# Testing first two links.
 first_two = data[0:2]
 
 ## This function writes the data into a folder.
