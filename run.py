@@ -17,8 +17,8 @@ my_token = ''
 
 df = pd.read_csv("owner_repo.csv")
 
-## There are 6000 links. So we do the first 500 first.
-first_500 = df.iloc[0:499]
+## There are about 2000 links. So we do the first 100 first.
+first_100 = df.iloc[0:99]
 
 #for index in first_500.index:
         
@@ -33,5 +33,5 @@ first_500 = df.iloc[0:499]
 
 
 ## This function writes the data into a folder.
-query_stargazers_from_repos(first_500, my_token)
+query_stargazers_from_repos(first_100, my_token)
 
