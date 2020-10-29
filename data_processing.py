@@ -20,8 +20,8 @@ def data_processing(data):
 
     # Drop the duplicate repos
     df = df.drop_duplicates()
+    df = df.reset_index(drop=True)
 
     # Write the data frame to file
-    df.to_csv("owner_repo.csv")
 
     return df

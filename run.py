@@ -5,7 +5,7 @@ from get_owner_repo import get_owner_repo
 from data_processing import data_processing
 import pandas as pd
 
-my_token = 'b05f22c728d8550e38326cc67bfaab55ecd04fcc'
+my_token = ''
 
 #data = load_links("repos.csv")
 
@@ -13,18 +13,22 @@ my_token = 'b05f22c728d8550e38326cc67bfaab55ecd04fcc'
 
 #df = data_processing(data)
 
+#df.to_csv("owner_repo.csv")
+
 df = pd.read_csv("owner_repo.csv")
 
 ## There are 6000 links. So we do the first 500 first.
 first_500 = df.iloc[0:499]
 
-#print(first_500.iloc[1])
-
-#for index in range(len(df)):
+#for index in first_500.index:
         
-#    owner, repo = df.loc[index, "Owner"], df.loc[index, "Repo"]
+#    owner = first_500.loc[index, "Owner"] 
+#    repo = first_500.loc[index, "Repo"]
 
 #    print(owner,repo)
+
+#for index in first_500.index:
+#    print(index)
 
 
 
